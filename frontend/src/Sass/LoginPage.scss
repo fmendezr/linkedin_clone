@@ -1,0 +1,45 @@
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    height: 50vh;
+
+    .heading {
+        margin-left: 80px;
+        font-family: system-ui;
+    }
+}
+
+.login-btn {
+    width: 150px;
+    height: 30px;
+    cursor: pointer;
+    background-color: #212121;
+}
+
+.auth-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .common-input {
+        height: 20px;
+        padding: 10px;
+    }
+    ::placeholder {
+        color:white
+    }
+}
+
+.login-btn {
+    margin-top: 20px;
+}
+
+.linkedin-logo {
+    width: 80px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}

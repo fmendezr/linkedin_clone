@@ -2,14 +2,28 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { router } from './Routes';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
-import { RouterProvider } from 'react-router-dom'
+import PrivateRoute from './Utils/PrivateRoute'
+
+import { AuthProvider } from './Context/AuthContext';
+
+import LoginPage from './Pages/LoginPage';
+import HomePage from './Pages/HomePage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Router>
+    <AuthProvider>
+      <Routes>
+        <Route element={<PrivateRoute />}>
+          <Route path='/' element={<HomePage />} exact/>
+        </Route>
+        <Route  path='/login' element={<LoginPage />}/>
+      </Routes>
+    </AuthProvider>
+    </Router>
   </React.StrictMode>
 );
 
